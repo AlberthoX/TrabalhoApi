@@ -1,0 +1,265 @@
+/* Reset de margens e paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos gerais do body com a fonte "Inter" */
+body {
+  font-family: 'Inter', sans-serif; /* Fonte "Inter" */
+  background-color: #202123; /* Fundo escuro */
+  color: #E8E6E3; /* Cor do texto */
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+/* Estilo da sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #2D2D2D; /* Fundo escuro da sidebar */
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h1 {
+  color: #10A37F; /* Cor verde */
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700; /* Negrito */
+}
+
+.sidebar button {
+  background-color: #505050; /* Fundo dos botões */
+  color: #E8E6E3;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 5px;
+  font-weight: 500; /* Médio */
+}
+
+.sidebar button:hover {
+  background-color: #10A37F; /* Cor de hover verde */
+}
+
+.sidebar h2 {
+  color: #E8E6E3;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 500; /* Médio */
+}
+
+.sidebar input {
+  background-color: #404040; /* Fundo do input */
+  color: #E8E6E3;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-weight: 400; /* Regular */
+}
+
+/* Estilo do conteúdo */
+.content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.topbar{
+  display: flex;
+  background-color: #505050;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #10A37F;
+}
+
+.games{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+
+.eachGame{
+  background-color: #404040;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 8px;
+  width: 350px;
+  height: 450px;
+}
+
+
+.eachGame img{
+  width: 100%;
+  height: 100%;
+  object-fit: fill; 
+  transition: 300ms;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.5);
+  border-radius: 5px;
+}
+
+.eachGame img:hover{
+ cursor: pointer;
+ opacity: 0.7;
+
+}
+
+/* Responsividade */
+
+/* Telas pequenas (smartphones) */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    padding: 10px;
+  }
+}
+
+/* Telas muito pequenas (menores que 480px) */
+@media (max-width: 480px) {
+  .sidebar h1 {
+    font-size: 20px;
+  }
+
+  .sidebar button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .sidebar input {
+    padding: 8px;
+  }
+
+  .content {
+    padding: 8px;
+  }
+}
+
+/* Telas grandes (desktops grandes) */
+@media (min-width: 1200px) {
+  .sidebar {
+    width: 300px;
+  }
+
+  .content {
+    padding: 30px;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(32, 33, 35, 0.8);
+  justify-content: center;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #303134;
+  margin: 2% auto;
+  padding: 20px;
+  border: 1px solid #3e3e42;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  color: #eaeaea;
+  position: relative;
+  box-sizing: border-box;
+  gap: 1vw;
+}
+
+.close {
+  color: #f38ba8;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #f76c85;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .close {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal-content {
+    width: 50%;
+  }
+}
+
+.divImgModal {
+  width: 100%;
+  
+}
+
+.divImgModal img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: fill;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.5);
+}
+
+.screenshots{
+  width: 430px;
+  height: 250px;
+}
+
+.divScreenshot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+.divScreenshot img{
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.5);
+}
