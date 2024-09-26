@@ -1,6 +1,8 @@
 package com.giggagames.api.controller;
 
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 import com.giggagames.api.model.Game;
 import com.giggagames.api.service.GameService;
 
@@ -19,7 +19,7 @@ import com.giggagames.api.service.GameService;
 @RequestMapping("giggagames/v1")
 public class GameController {
 
-    private GameService gameService;
+    private final GameService gameService;
 
     public GameController(GameService gameService){
         this.gameService = gameService;
