@@ -7,8 +7,12 @@ const content = document.querySelector(".content");
 const close = document.querySelector(".close");
 const modalAdicionar = document.querySelector("#modalAdicionar");
 const modalRemover = document.querySelector("#modalRemover");
-const botaoAdicionarJogo = document.querySelector("#botaoAdicionarJogo");
-const botaoRemoverJogo = document.querySelector("#botaoRemoverJogo");
+
+
+
+
+
+
 
 
 
@@ -99,34 +103,59 @@ fetch("http://localhost:8080/giggagames/v1", optionsGET)
     }
 })
 
-const jogoadicionado = {
-    nome: "Grand Theft Auto 6",
-    descricao: "GTA V é um jogo de ação e aventura em mundo aberto que se passa na fictícia cidade de Los Santos. Os jogadores controlam três protagonistas — Michael, Franklin e Trevor — em uma narrativa cheia de crimes, perseguições e reviravoltas.",
-    plataforma: "PC/PS3/X-360/X-ONE/PS4/PS5/X-SX/X-SS",
-    capa: "https://s2-techtudo.glbimg.com/emive1thVR6x2SyhvaOZ5_kR-EY=/0x0:300x371/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/1/9/8cOmg9TkaB2PgkS1sUjQ/2013-04-02-gta5-capa-rockstar-.jpg",
-    capaWidescreen: "https://www.igta5.com/images/official-artwork-blitz-play.jpg",
-    preco: 30.0,
-    screenshotsGame: [
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/ss_bb2ee3b9b48a60857873192cfff10546e01d4a86.jpg?t=1726606628",
-    "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/ss_43e9c59d968e7f99f1eef065af85b3e542100366.jpg?t=1726606628"
-    ]
-}
 
-const optionsPOST = {
-    method: "POST",
-    headers: {
-        'Content-Type': 'application/json' // Define que o corpo da requisição é JSON
-    },
-    body: JSON.stringify(jogoadicionado),
-}
+
+const botaoSalvar = document.querySelector(".botaoSalvar");
+const inputNomeJogo = document.querySelector("#inputNomeJogo")
+const inputDescricaoJogo = document.querySelector("#inputDescricaoJogo")
+const inputCapaJogo = document.querySelector("#inputCapaJogo")
+const inputPosterJogo = document.querySelector("#inputPosterJogo")
+const inputPrecoJogo = document.querySelector("#inputPrecoJogo")
+const inputScreenshot1Jogo = document.querySelector("#inputScreenshot1Jogo")
+const inputScreenshot2Jogo = document.querySelector("#inputScreenshot2Jogo")
 
 
 
-fetch("http://localhost:8080/giggagames/v1", optionsPOST)
-.then(response => response)
-.then(data => {
-    console.log(data);
+
+
+
+botaoSalvar.addEventListener('click', () => {
+
+    let jogoadicionado = {
+        nome: inputNomeJogo.value,
+        descricao: inputDescricaoJogo.value,
+        capa: "sadsadasd",
+        capaWidescreen: inputPosterJogo.value,
+        preco: inputPrecoJogo.value,
+        screenshotsGame: [
+            inputScreenshot1Jogo.value,
+            inputScreenshot2Jogo.value,
+        ]
+    }
+    console.log(JSON.stringify(jogoadicionado))
+    const optionsPOST = {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jogoadicionado),
+    }
+    
+
+    fetch("http://localhost:8080/giggagames/v1", optionsPOST)
+    .then(response => response)
+    .then(data => {
+        console.log(data);
+    })
+
+
 })
+
+
+
+
+
+
   
 
 
