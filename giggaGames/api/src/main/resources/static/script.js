@@ -7,9 +7,13 @@ const content = document.querySelector(".content");
 const close = document.querySelector(".close");
 const modalAdicionar = document.querySelector("#modalAdicionar");
 const modalRemover = document.querySelector("#modalRemover");
+const modalLoading = document.querySelector("#modalLoading");
 
+const botaoAdicionarJogo = document.querySelector("#botaoAdicionarJogo");
+const botaoRemoverJogo = document.querySelector("#botaoRemoverJogo");
 
-
+const tabelaAllJogos = document.querySelector("#tabelaAllJogos");
+const inputRemoverJogo = document.querySelector("#inputRemoverJogo");
 
 
 
@@ -33,7 +37,6 @@ botaoAdicionarJogo.addEventListener('click', (event)=>{
 
 botaoRemoverJogo.addEventListener('click', (event)=>{
     modalRemover.style.display = 'block';
-
     window.onclick = function(event) {
         if (event.target === modalRemover) {
             modalRemover.style.display = "none";
@@ -72,7 +75,7 @@ fetch("http://localhost:8080/giggagames/v1", optionsGET)
             }
 
             let divImgModal = document.createElement("div")
-            divImgModal.className = "divImgModal"
+            divImgModal.id = "divImgModal"
 
             let divScreenshot = document.createElement("div");
             divScreenshot.className = "divScreenshot"
@@ -90,7 +93,7 @@ fetch("http://localhost:8080/giggagames/v1", optionsGET)
 
             for (let index2 = 0; index2 < data[index].screenshotsGame.length; index2++) {
                 let screenshots = document.createElement("img");
-                screenshots.className = "screenshots"
+                screenshots.className = "screenshots";
                 screenshots.src = data[index].screenshotsGame[index2];
                 divScreenshot.appendChild(screenshots);
                 modalContent.appendChild(divScreenshot);
@@ -98,35 +101,59 @@ fetch("http://localhost:8080/giggagames/v1", optionsGET)
             modalContent.appendChild(descricao)
             modalContent.appendChild(plataforma)
         })
+
         eachGame.appendChild(capaJogo);
         games.appendChild(eachGame);
+
+        let tr = document.createElement("tr");
+        let tdId = document.createElement("td");
+        let tdNome = document.createElement("td");
+
+        tdId.textContent = data[index].id
+        tdNome.textContent = data[index].nome
+
+
+
+        tr.appendChild(tdId)
+        tr.appendChild(tdNome)
+        tabelaAllJogos.appendChild(tr)
+
+        
+
     }
 })
-
 
 
 const botaoSalvar = document.querySelector(".botaoSalvar");
 const inputNomeJogo = document.querySelector("#inputNomeJogo")
 const inputDescricaoJogo = document.querySelector("#inputDescricaoJogo")
-const inputCapaJogo = document.querySelector("#inputCapaJogo")
+const inputPlataformaJogo = document.querySelector("#inputPlataformaJogo")
 const inputPosterJogo = document.querySelector("#inputPosterJogo")
 const inputPrecoJogo = document.querySelector("#inputPrecoJogo")
 const inputScreenshot1Jogo = document.querySelector("#inputScreenshot1Jogo")
 const inputScreenshot2Jogo = document.querySelector("#inputScreenshot2Jogo")
+const imgCapa = document.querySelector("#imgCapa")
 
 
 
 
+const inputCapaJogo = document.querySelector("#inputCapaJogo")
+inputCapaJogo.addEventListener("change", uploadImg)
+
+function uploadImg() {
+    imgCapa.src = inputCapaJogo.value;
+}
 
 
 botaoSalvar.addEventListener('click', () => {
-
+    console.log(inputCapaJogo.value)
     let jogoadicionado = {
         nome: inputNomeJogo.value,
         descricao: inputDescricaoJogo.value,
-        capa: "sadsadasd",
+        capa: inputCapaJogo.value,
         capaWidescreen: inputPosterJogo.value,
         preco: inputPrecoJogo.value,
+        plataforma: inputPlataformaJogo.value,
         screenshotsGame: [
             inputScreenshot1Jogo.value,
             inputScreenshot2Jogo.value,
@@ -148,9 +175,44 @@ botaoSalvar.addEventListener('click', () => {
         console.log(data);
     })
 
+    modalLoading.style.display = "block"
+    modalAdicionar.style.display = "none";
+
+    setTimeout(() => {
+        window.location.reload();
+        modalLoading.style.display = "none"
+    }, 1500);
+    
 
 })
 
+
+const optionsDELETE = {
+    method: "DELETE",
+   
+}
+
+
+
+const botaoExcluir = document.querySelector("#botaoExcluir")
+
+botaoExcluir.addEventListener("click", () => {
+    fetch("http://localhost:8080/giggagames/v1/"+ inputRemoverJogo.value, optionsDELETE)
+    .then(response => response)
+    .then(data => {
+        console.log(data);
+    })
+
+    modalRemover.style.display = "none"
+    modalLoading.style.display = "block"
+
+    setTimeout(() => {
+        window.location.reload();
+        modalLoading.style.display = "none"
+    }, 1500);
+    
+
+})
 
 
 

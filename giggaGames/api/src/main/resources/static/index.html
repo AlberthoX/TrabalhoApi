@@ -36,6 +36,35 @@
     </div>
   </div>
 
+  <div class="modal" id="modalRemover">
+      <button class="close">X</button>
+      <div class="modal-content" id="modalRemover-content">
+        <h1>Remover Jogo</h1>
+        <div class="divConteudoVertical">
+          
+          <table id="tabelaAllJogos">
+            <tr>
+              <th>ID</th>
+              <th>Nome do Jogo</th>
+            </tr>
+          </table>
+          
+          <h3>Delete o Jogo pelo ID</h3>
+          <input type="number" class="inputsJogo" id="inputRemoverJogo">
+          <button id="botaoExcluir">EXCLUIR!</button>
+        </div>
+        
+      </div>
+  </div>
+
+  <div class="modal" id="modalLoading">
+    <div class="modal-content" id="modalLoading-content">
+      <img src="./imgs/line-md--loading-twotone-loop.svg" id="imgLoading" alt="">
+      <h1>CARREGANDO REQUISIÇÃO...</h1>
+    </div>
+  </div>
+
+
 
   <div class="modal" id="modalAdicionar">
     <button class="close">X</button>
@@ -43,8 +72,11 @@
       <h1>Adicionar Jogo</h1>
       <div class="divConteudoHorizonal">
         <div id="divModalImgAll">
-          <div id="divModalAdicionarImg" class="divModalImg"></div>
-          <input type="file" name="" id="">
+          <div id="divModalAdicionarImg">
+            <img src="" id="imgCapa" >
+          </div>
+          <h3>Digite a Url da Capa do Jogo</h3>
+          <input type="text" name="" id="inputCapaJogo" class="inputsJogo">
         </div>
         
         <div class="divDadosJogo">
@@ -52,12 +84,12 @@
           <input type="text" id="inputNomeJogo" class="inputsJogo">
           <h3>Descrição do Jogo:</h3>
           <input type="text" id="inputDescricaoJogo" class="inputsJogo">
-          <h3>Capa do Jogo:</h3>
-          <input type="text" id="inputCapaJogo" class="inputsJogo">
+          <h3>Plataformas Disponíveis:</h3>
+          <input type="text" id="inputPlataformaJogo" class="inputsJogo">
           <h3>Capa Widescreen (Poster) do Jogo:</h3>
           <input type="text" id="inputPosterJogo" class="inputsJogo">
           <h3>Preço do Jogo:</h3>
-          <input type="text" id="inputPrecoJogo" class="inputsJogo">
+          <input type="number" id="inputPrecoJogo" class="inputsJogo">
           <h3>URL das Screenshots do Jogo:</h3>
           <span>1.</span>
           <input type="text" id="inputScreenshot1Jogo" class="inputsJogo">
@@ -70,19 +102,7 @@
       </div>
   </div>
 
-  <div class="modal" id="modalRemover">
-    <button class="close">X</button>
-    <div class="modal-content" id="modalRemover-content">
-      <h1>Remover Jogo</h1>
-      <div class="divConteudoHorizonal">
-        
-        <div>
-        </div>
-        
-      </div>
-      
-    </div>
-  </div>
+  
 
 </body>
 </html>
