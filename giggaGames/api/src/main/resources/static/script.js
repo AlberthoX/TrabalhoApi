@@ -15,11 +15,6 @@ const tabelaAllJogos = document.querySelector("#tabelaAllJogos");
 const inputRemoverJogo = document.querySelector("#inputRemoverJogo");
 
 
-
-
-
-
-
 botaoAdicionarJogo.addEventListener("click", (event) => {
   modalAdicionar.style.display = "block";
   window.onclick = function (event) {
@@ -38,6 +33,8 @@ botaoRemoverJogo.addEventListener("click", (event) => {
   };
 });
 
+
+//METODO GET
 const optionsGET = {
   method: "GET",
 };
@@ -106,8 +103,21 @@ fetch("http://localhost:8080/giggagames/v1", optionsGET)
       let tdId = document.createElement("td");
       let tdNome = document.createElement("td");
 
+      
+
       tdId.textContent = data[index].id;
       tdNome.textContent = data[index].nome;
+      inputRemoverJogo.addEventListener("input", () => {
+        if (inputRemoverJogo.value == tdId.textContent) {
+            tr.style.backgroundColor = "#B81829"
+            tr.style.borderRadius = "10px"
+    
+        }
+        else{
+            tr.style.backgroundColor = "#303134"
+        }
+      })
+        
 
       tr.appendChild(tdId);
       tr.appendChild(tdNome);
@@ -160,6 +170,7 @@ botaoSalvar.addEventListener("click", (event) => {
 
   console.log(JSON.stringify(jogoAdicionado));
 
+    //METODO POST
   const optionsPOST = {
     method: "POST",
     headers: {
@@ -183,11 +194,18 @@ botaoSalvar.addEventListener("click", (event) => {
   }, 1500);
 });
 
+
+
+//METODO DELETE
 const optionsDELETE = {
   method: "DELETE",
 };
 
 const botaoExcluir = document.querySelector("#botaoExcluir");
+
+
+
+
 botaoExcluir.addEventListener("click", () => {
 
     if (inputRemoverJogo.value.trim() === "") {
