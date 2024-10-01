@@ -1,8 +1,10 @@
 # mini-projeto-fullstack
 Introdução
+
 Esta documentação descreve a criação de uma API RESTful para gerenciar um catálogo de jogos. A API permite que os usuários realizem operações básicas como adicionar, listar, atualizar e remover jogos. O objetivo é fornecer uma interface simples e intuitiva para a manipulação de dados relacionados a jogos.
 
 Estrutura da API
+
 A API foi construída seguindo princípios REST e está estruturada para facilitar a interação com os dados. Cada recurso (neste caso, jogos) pode ser acessado através de Endpoints específicos, utilizando os métodos HTTP adequados.
 Endpoints
 A seguir, são listados os principais Endpoints da API, junto com uma breve descrição de suas funcionalidades:
@@ -18,6 +20,7 @@ A seguir, são listados os principais Endpoints da API, junto com uma breve desc
 •	| DELETE | giggagames/v1/{id} | Remove um jogo do catálogo |
 
 Implementação
+
 1.	Tecnologias Utilizadas
 
 Java: Linguagem de programação utilizada para construir a API.
@@ -34,6 +37,7 @@ Pré-Requisitos:  Java 11 ou superior e Maven 3.6 ou superior
 
 
 Passos para Instalação
+
 Passo 1:  Clone o repositório:
  	bash
    	git clone https://github.com/seu-usuario/catalogo-jogos.git
@@ -117,12 +121,14 @@ DELETE /api/jogos/1 HTTP/1.1
 Host: localhost:8080
 
 Tratamento de Erros
+
 A API possui um sistema de tratamento de erros que pode retornar os seguintes códigos:
 - *400 Bad Request*: Indica que a requisição não foi formatada corretamente.
 - *404 Not Found*: Indica que o recurso solicitado (jogo) não foi encontrado.
 - *500 Internal Server Error*: Indica que ocorreu um erro inesperado no servidor.
 
 Considerações Finais
+
 Esta documentação fornece um guia completo para a criação e utilização da API de Catálogo de Jogos. Ao seguir as instruções e utilizar os exemplos fornecidos, os desenvolvedores poderão implementar e interagir com a API de maneira eficaz.
 
 Se houver dúvidas ou necessidade de suporte adicional, não hesite em entrar em contato!
