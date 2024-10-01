@@ -14,6 +14,12 @@ const botaoRemoverJogo = document.querySelector("#botaoRemoverJogo");
 const tabelaAllJogos = document.querySelector("#tabelaAllJogos");
 const inputRemoverJogo = document.querySelector("#inputRemoverJogo");
 
+
+
+
+
+
+
 botaoAdicionarJogo.addEventListener("click", (event) => {
   modalAdicionar.style.display = "block";
   window.onclick = function (event) {
@@ -183,20 +189,31 @@ const optionsDELETE = {
 
 const botaoExcluir = document.querySelector("#botaoExcluir");
 botaoExcluir.addEventListener("click", () => {
-  fetch(
-    "http://localhost:8080/giggagames/v1/" + inputRemoverJogo.value,
-    optionsDELETE
-  )
-    .then((response) => response)
-    .then((data) => {
-      console.log(data);
-    });
 
-  modalRemover.style.display = "none";
-  modalLoading.style.display = "block";
+    if (inputRemoverJogo.value.trim() === "") {
+        alert("Por favor, preencha o campo de ID antes de salvar.");
+    }
+    else{
+        fetch(
+            "http://localhost:8080/giggagames/v1/" + inputRemoverJogo.value,
+            optionsDELETE
+          )
+            .then((response) => response)
+            .then((data) => {
+              console.log(data);
+            });
+        
+          modalRemover.style.display = "none";
+          modalLoading.style.display = "block";
+        
+          setTimeout(() => {
+            window.location.reload();
+            modalLoading.style.display = "none";
+          }, 1500);
+    }
 
-  setTimeout(() => {
-    window.location.reload();
-    modalLoading.style.display = "none";
-  }, 1500);
+  
 });
+
+
+
