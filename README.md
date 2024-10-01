@@ -1,6 +1,7 @@
 # mini-projeto-fullstack
 
-![Uploading Preto e Amarelo Escuro Gamer Sobrevivência Miniatura para YouTube (1).png…]()
+![poster gigga games](https://github.com/user-attachments/assets/2e6d3c0c-d754-486c-b6c1-dc29755684b0)
+
 
 
 
