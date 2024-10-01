@@ -1,4 +1,8 @@
 # mini-projeto-fullstack
+
+![Preto e Amarelo Escuro Gamer Sobrevivência Miniatura para YouTube](https://github.com/user-attachments/assets/a58f3a30-aa9e-4e3d-8c00-c536a22bdf5f)
+
+
 Introdução
 
 Esta documentação descreve a criação de uma API RESTful para gerenciar um catálogo de jogos. A API permite que os usuários realizem operações básicas como adicionar, listar, atualizar e remover jogos. O objetivo é fornecer uma interface simples e intuitiva para a manipulação de dados relacionados a jogos.
