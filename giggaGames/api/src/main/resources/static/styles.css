@@ -7,9 +7,9 @@
 
 /* Estilos gerais do body com a fonte "Inter" */
 body {
-  font-family: 'Inter', sans-serif; /* Fonte "Inter" */
+  font-family: "Inter", sans-serif; /* Fonte "Inter" */
   background-color: #202123; /* Fundo escuro */
-  color: #E8E6E3; /* Cor do texto */
+  color: #e8e6e3; /* Cor do texto */
   display: flex;
   flex-direction: row;
   height: 100vh;
@@ -18,20 +18,20 @@ body {
 /* Estilo da sidebar */
 .sidebar {
   width: 250px;
-  background-color: #2D2D2D; /* Fundo escuro da sidebar */
+  background-color: #2d2d2d; /* Fundo escuro da sidebar */
   padding: 20px;
-  height: 110vh;
+  height: auto; /* Ajustar altura automaticamente */
   display: flex;
   flex-direction: column;
 }
 
-.divPesquisa{
+.divPesquisa {
   margin-top: 50px;
-  color: #10A37F;
+  color: #10a37f;
 }
 
 .sidebar h1 {
-  color: #10A37F; /* Cor verde */
+  color: #10a37f; /* Cor verde */
   font-size: 24px;
   margin-bottom: 20px;
   font-weight: 700; /* Negrito */
@@ -39,7 +39,7 @@ body {
 
 .sidebar button {
   background-color: #505050; /* Fundo dos botões */
-  color: #E8E6E3;
+  color: #e8e6e3;
   padding: 10px;
   margin: 10px 0;
   border: none;
@@ -50,11 +50,11 @@ body {
 }
 
 .sidebar button:hover {
-  background-color: #10A37F; /* Cor de hover verde */
+  background-color: #10a37f; /* Cor de hover verde */
 }
 
 .sidebar h2 {
-  color: #E8E6E3;
+  color: #e8e6e3;
   margin-top: 30px;
   font-size: 18px;
   font-weight: 500; /* Médio */
@@ -62,7 +62,7 @@ body {
 
 .sidebar input {
   background-color: #404040; /* Fundo do input */
-  color: #E8E6E3;
+  color: #e8e6e3;
   padding: 10px;
   border: none;
   width: 100%;
@@ -77,7 +77,7 @@ body {
   flex-grow: 1;
 }
 
-.topbar{
+.topbar {
   display: flex;
   background-color: #505050;
   padding: 10px;
@@ -85,20 +85,20 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: #10A37F;
+  color: #10a37f;
 }
 
-.games{
+.games {
   display: flex;
   flex-direction: row;
   gap: 10px;
   padding: 10px;
   width: 100%;
-  justify-content:space-between;
-  flex-wrap:wrap;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.eachGame{
+.eachGame {
   background-color: #404040;
   justify-content: center;
   text-align: center;
@@ -106,24 +106,22 @@ body {
   flex-direction: column;
   padding: 15px;
   border-radius: 8px;
-  width: 350px;
+  width: 350px; /* largura padrão */
   height: 450px;
 }
 
-
-.eachGame img{
+.eachGame img {
   width: 100%;
   height: 100%;
-  object-fit: fill; 
+  object-fit: fill;
   transition: 300ms;
-  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.5);
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
   border-radius: 5px;
 }
 
-.eachGame img:hover{
- cursor: pointer;
- opacity: 0.7;
-
+.eachGame img:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 /* Responsividade */
@@ -141,6 +139,11 @@ body {
 
   .content {
     padding: 10px;
+  }
+
+  .eachGame {
+    width: 100%; /* Ajustar largura para ocupar 100% */
+    height: auto; /* Altura automática */
   }
 }
 
@@ -203,57 +206,57 @@ body {
   box-sizing: border-box;
   gap: 1vw;
 }
-.divModalImg{
+
+.divModalImg {
   border-style: dotted;
   height: 450px;
   width: 300px;
 }
-.divConteudoHorizonal{
+
+.divConteudoHorizonal {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.inputsJogo{
-  height: 30px;
-  background-color: #404040;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.6);
-  border: 0;
-  color: white;
-  padding: 5px;
-}
-.botaoSalvar{
-  background-color: #10A37F;
-  width: 50px;
-  height: 40px;
-  border-radius: 10px;
-  border: 0;
-  margin-top: 10px;
-  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.6);
-}
-.divDadosJogo{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-#divModalImgAll{
-  display: flex;
-  flex-direction: column;
-  gap:5px;
-}
-.close {
-  color: #f38ba8;
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  background: transparent;
+
+.inputsJogo {
+  background-color: #404040; /* Fundo do input */
+  color: #e8e6e3;
+  padding: 10px;
   border: none;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: 400; /* Regular */
 }
 
-.close:hover {
-  color: #f76c85;
+.botaoSalvar {
+  background-color: #10a37f; /* Fundo dos botões */
+  color: #e8e6e3;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 5px;
+  font-weight: 500; /* Médio */
+  text-align: center;
+}
+
+.botaoSalvar:hover {
+  background-color: #12634f;
+}
+
+.divDadosJogo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#divModalImgAll {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 @media (max-width: 600px) {
@@ -265,10 +268,6 @@ body {
   button {
     padding: 10px 20px;
     font-size: 1rem;
-  }
-
-  .close {
-    font-size: 1.2rem;
   }
 }
 
@@ -282,80 +281,83 @@ body {
   width: 350px;
   height: 400px;
   border-style: dotted;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 #divModalAdicionarImg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.5);
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
 }
 
 #divImgModal {
   width: 100%;
-  
 }
 
 #divImgModal img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.5);
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
 }
 
-.screenshots{
+.screenshots {
   width: 50%;
-  height:250px;
+  height: 250px;
 }
 
-.divScreenshot{
+.divScreenshot {
   display: flex;
   width: 100%;
   gap: 5px;
   flex-direction: row;
   justify-content: space-around;
-  
 }
 
-.divScreenshot img{
+.divScreenshot img {
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.5);
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
 }
 
-#tabelaAllJogos{
-  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.5);
+#tabelaAllJogos {
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 10px;
   width: 500px;
 }
 
-.divConteudoVertical{
+.divConteudoVertical {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-#modalLoading-content{
+#modalLoading-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#imgLoading{
-  width: 700px;
-  height: 500px;
+#imgLoading {
+  width: 400px;
+  height: 400px;
 }
-#botaoExcluir{
+
+#botaoExcluir {
   width: max-content;
+  height: 40px;
   padding: 5px;
   background-color: rgb(194, 14, 14);
   color: white;
   border-radius: 10px;
   border: 0;
-  box-shadow: 0px 0px 10px rgb(0, 0, 0,0.5);
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
   transition: 300ms;
 }
-#botaoExcluir:hover{
+
+#botaoExcluir:hover {
   cursor: pointer;
   opacity: 0.7;
 }
