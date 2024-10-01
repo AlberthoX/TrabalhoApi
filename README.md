@@ -1,6 +1,7 @@
 # mini-projeto-fullstack
 
-![Preto e Amarelo Escuro Gamer Sobrevivência Miniatura para YouTube](https://github.com/user-attachments/assets/a58f3a30-aa9e-4e3d-8c00-c536a22bdf5f)
+![Uploading Preto e Amarelo Escuro Gamer Sobrevivência Miniatura para YouTube (1).png…]()
+
 
 
 Introdução
